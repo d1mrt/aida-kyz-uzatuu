@@ -1237,11 +1237,38 @@ section[id] {
 
 @media (max-width: 720px) {
   .site-header {
+    gap: 0.6rem;
     padding: 0.85rem 1rem;
   }
 
+  .brand {
+    gap: 0.55rem;
+    min-width: 0;
+  }
+
+  .brand-mark {
+    width: 2.45rem;
+    height: 2.45rem;
+    flex: 0 0 auto;
+  }
+
+  .brand-copy {
+    min-width: 0;
+  }
+
+  .brand-copy strong {
+    font-size: 0.98rem;
+    line-height: 1.05;
+  }
+
   .brand-copy small {
-    display: none;
+    display: block;
+    max-width: 9.5rem;
+    overflow: hidden;
+    font-size: 0.68rem;
+    line-height: 1.15;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .language-switcher {
