@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Кыз узатуу мааракеси үчүн кооз чакыруу сайты: жооп берүү, программа, сүрөт маанайы жана конок маалыматтары."
+      content="Кыз узатуу мааракеси үчүн кооз чакыруу сайты: жооп берүү, сүрөт маанайы жана конок маалыматтары."
     />
     <title>Кыз узатуу | Мааракеге чакыруу</title>
     <link rel="stylesheet" href="styles.css" />
@@ -18,14 +18,12 @@
         <span class="brand-mark" aria-hidden="true">КУ</span>
         <span class="brand-copy">
           <strong data-i18n="brandTitle">Кыз узатуу</strong>
-          <small data-i18n="brandSubtitle">Аиданын мааракеси</small>
+          <small data-i18n="brandSubtitle">Аиданын маарекеси</small>
         </span>
       </a>
 
       <nav class="site-nav" id="siteNav" aria-label="Негизги навигация">
-        <a href="#meaning" data-i18n="navMeaning">Маңызы</a>
         <a href="#details" data-i18n="navDetails">Маалымат</a>
-        <a href="#program" data-i18n="navProgram">Программа</a>
         <a href="#moments" data-i18n="navMoments">Көз ирмемдер</a>
         <a href="#rsvp" data-i18n="navRsvp">Жооп берүү</a>
       </nav>
@@ -64,10 +62,13 @@
         <div class="hero-shade" aria-hidden="true"></div>
 
         <div class="hero-content">
-          <p class="eyebrow" data-i18n="heroEyebrow">2026-жылдын 22-июлу - Ош</p>
-          <h1 id="hero-title" data-i18n="heroTitle">Кыз узатуу</h1>
+          <p class="eyebrow" data-i18n="heroEyebrow">2026-жылдын 22-июлу - Ош шаары</p>
+          <h1 id="hero-title" data-i18n="heroTitle">Аида</h1>
+          <p class="hero-subtitle" data-i18n="heroSubtitle">Кыз Узатуу</p>
           <p class="hero-lead" data-i18n="heroLead">
-            Үй-бүлөнү, салтты жана жаңы жашоонун жарык башталышын даңазалаган жылуу маараке.
+            Бул күн биз үчүн өзгөчө маанилүү. Биз бул кубанычтуу көз ирмемди эң жакын, сүйүктүү адамдардын жана досторубуздун курчоосунда өткөргүбүз келет.
+
+            Сиздерди кызыбыздын Аида Кыз Узатуу тоюна чакырганыбызга абдан кубанычтабыз!
           </p>
 
           <div class="hero-actions" aria-label="Негизги аракеттер">
@@ -89,25 +90,6 @@
               <dd data-i18n="venueName">Тумар кафеси</dd>
             </div>
           </dl>
-        </div>
-      </section>
-
-      <section class="section intro-band" id="meaning">
-        <div class="section-inner intro-grid">
-          <div>
-            <p class="section-kicker" data-i18n="meaningKicker">Маңызы</p>
-            <h2 data-i18n="meaningTitle">Заманбап шаң менен салттуу жылуулук бириккен күн.</h2>
-          </div>
-          <div class="intro-copy">
-            <p data-i18n="meaningText1">
-              Кыз узатуу - кызды жаңы үйүнө ак бата, ыр-күү, жылуу сөз жана терең ыраазычылык менен узаткан
-              үй-бүлөлүк салтанат.
-            </p>
-            <p data-i18n="meaningText2">
-              Бул кечеде конок тосуу, ата-эненин тилеги, берекелүү дасторкон жана жүрөктөн чыккан узатуу
-              көз ирмеми бирге өтөт.
-            </p>
-          </div>
         </div>
       </section>
 
@@ -140,7 +122,7 @@
                 </svg>
               </span>
               <h3 data-i18n="venueCardTitle">Өтчү жер</h3>
-              <p data-i18n="venueCardText">Тумар кафеси, Ош. Кире бериште үй-бүлөлүк тосуп алуу уюштурулат.</p>
+              <p data-i18n="venueCardText">Тумар кафеси, Ош шаары. Кире бериште үй-бүлөлүк тосуп алуу уюштурулат.</p>
             </article>
 
             <article class="detail-card">
@@ -176,93 +158,44 @@
               <small data-i18n="countSeconds">Секунд</small>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section class="section program-band" id="program">
-        <div class="section-inner program-grid">
-          <div class="program-copy">
-            <p class="section-kicker" data-i18n="programKicker">Программа</p>
-            <h2 data-i18n="programTitle">Конок тосуудан узатууга чейинки назик тартип.</h2>
-            <p data-i18n="programText">
-              Салтанат, кечки тамак жана шаңдуу учурлар конокторго кеченин жүрүшүн оңой түшүнүүгө ылайыкталып түзүлдү.
-            </p>
-          </div>
-
-          <div class="schedule-tool" aria-label="Мааракенин программасы">
-            <div class="tab-list" role="tablist" aria-label="Программанын бөлүмдөрү">
-              <button class="tab-button is-active" type="button" role="tab" aria-selected="true" data-tab="ceremony">
-                <span data-i18n="tabCeremony">Салтанат</span>
-              </button>
-              <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="dinner">
-                <span data-i18n="tabDinner">Кечки тамак</span>
-              </button>
-              <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="celebration">
-                <span data-i18n="tabCelebration">Шаң</span>
-              </button>
+          <div class="mini-calendar" aria-label="Мааракенин күнү">
+            <div>
+              <p data-i18n="calendarPanelKicker">Той салтанаты</p>
+              <strong data-i18n="calendarPanelDate">22-июль, саат 18:00</strong>
             </div>
-
-            <div class="timeline" data-panel="ceremony" role="tabpanel">
-              <div class="timeline-item">
-                <div>
-                  <h3 data-i18n="ceremonyTitle1">Конок тосуу</h3>
-                  <p data-i18n="ceremonyText1">Үй-бүлөнүн тосуп алуусу, гүлдөр жана алгачкы сүрөттөр.</p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div>
-                  <h3 data-i18n="ceremonyTitle2">Бата берүү</h3>
-                  <p data-i18n="ceremonyText2">Улуулардын ак батасы, музыка жана узатуу салты.</p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div>
-                  <h3 data-i18n="ceremonyTitle3">Үй-бүлөлүк тост</h3>
-                  <p data-i18n="ceremonyText3">Ата-эне, туугандар жана жакын коноктор үчүн жылуу учур.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline" data-panel="dinner" role="tabpanel" hidden>
-              <div class="timeline-item">
-                <div>
-                  <h3 data-i18n="dinnerTitle1">Кечки тамак</h3>
-                  <p data-i18n="dinnerText1">Салттуу дасторкон, чай, таттуулар жана мезгилдик даамдар.</p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div>
-                  <h3 data-i18n="dinnerTitle2">Коноктордун тилектери</h3>
-                  <p data-i18n="dinnerText2">Кыска каалоо-тилектер жана үй-бүлөлүк куттуктоолор.</p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div>
-                  <h3 data-i18n="dinnerTitle3">Чай үстүндөгү маек</h3>
-                  <p data-i18n="dinnerText3">Сүйлөшүү жана эстелик сүрөттөр үчүн жайдары тыныгуу.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline" data-panel="celebration" role="tabpanel" hidden>
-              <div class="timeline-item">
-                <div>
-                  <h3 data-i18n="celebrationTitle1">Музыка жана бий</h3>
-                  <p data-i18n="celebrationText1">Жандуу музыка, бий жана үй-бүлөлүк шаң.</p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div>
-                  <h3 data-i18n="celebrationTitle2">Узатуу көз ирмеми</h3>
-                  <p data-i18n="celebrationText2">Кыздын жаңы сапарынын алдында айтылган акыркы ак бата.</p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div>
-                  <h3 data-i18n="celebrationTitle3">Жыйынтык</h3>
-                  <p data-i18n="celebrationText3">Конокторду узатуу жана акыркы эстелик сүрөттөр.</p>
-                </div>
-              </div>
+            <div class="month-grid" aria-hidden="true">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4</span>
+              <span>5</span>
+              <span>6</span>
+              <span>7</span>
+              <span>8</span>
+              <span>9</span>
+              <span>10</span>
+              <span>11</span>
+              <span>12</span>
+              <span>13</span>
+              <span>14</span>
+              <span>15</span>
+              <span>16</span>
+              <span>17</span>
+              <span>18</span>
+              <span>19</span>
+              <span>20</span>
+              <span>21</span>
+              <span class="is-event-day">22</span>
+              <span>23</span>
+              <span>24</span>
+              <span>25</span>
+              <span>26</span>
+              <span>27</span>
+              <span>28</span>
+              <span>29</span>
+              <span>30</span>
+              <span>31</span>
             </div>
           </div>
         </div>
@@ -330,13 +263,34 @@
             </label>
 
             <label>
-              <span data-i18n="formAttendanceLabel">Келүү мүмкүнчүлүгү</span>
-              <select name="attendance" required>
-                <option value="yes" data-i18n="attendanceYes">Келем</option>
-                <option value="maybe" data-i18n="attendanceMaybe">Азырынча так эмес</option>
-                <option value="no" data-i18n="attendanceNo">Келе албайм</option>
+              <span data-i18n="formGuestCountLabel">Конок саны</span>
+              <select name="guestCount" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
               </select>
             </label>
+
+            <div class="form-field">
+              <span data-i18n="formAttendanceLabel">Келүү мүмкүнчүлүгү</span>
+              <span class="radio-list">
+                <label>
+                  <input type="radio" name="attendance" value="yes" required />
+                  <span data-i18n="attendanceYes">Келем</span>
+                </label>
+                <label>
+                  <input type="radio" name="attendance" value="no" />
+                  <span data-i18n="attendanceNo">Келе албайм</span>
+                </label>
+              </span>
+            </div>
 
             <label>
               <span data-i18n="formMessageLabel">Каалоо-тилек</span>
@@ -349,58 +303,15 @@
         </div>
       </section>
 
-      <section class="section faq-band" id="faq">
-        <div class="section-inner faq-grid">
-          <div>
-            <p class="section-kicker" data-i18n="faqKicker">Суроолор</p>
-            <h2 data-i18n="faqTitle">Коноктор үчүн пайдалуу маалымат.</h2>
-          </div>
-
-          <div class="accordion" data-accordion>
-            <article class="accordion-item">
-              <button type="button" aria-expanded="false">
-                <span data-i18n="faqQ1">Коноктор унаасын кайда токтотот?</span>
-                <span aria-hidden="true"></span>
-              </button>
-              <div class="accordion-panel">
-                <p data-i18n="faqA1">Унаа токтотуучу жай негизги кире беришке жакын болот. Үй-бүлө жардамчылары келгенде багыт көрсөтөт.</p>
-              </div>
-            </article>
-
-            <article class="accordion-item">
-              <button type="button" aria-expanded="false">
-                <span data-i18n="faqQ2">Балдар келсе болобу?</span>
-                <span aria-hidden="true"></span>
-              </button>
-              <div class="accordion-panel">
-                <p data-i18n="faqA2">Ооба, балдар да келе алышат. Керек болсо каалоо-тилек бөлүгүнө кыскача белгилеп коюңуз.</p>
-              </div>
-            </article>
-
-            <article class="accordion-item">
-              <button type="button" aria-expanded="false">
-                <span data-i18n="faqQ3">Өтчү жерди кантип табам?</span>
-                <span aria-hidden="true"></span>
-              </button>
-              <div class="accordion-panel">
-                <p data-i18n="faqA3">
-                  Төмөндөгү багыт баскычын басып, Google Maps аркылуу өтчү жерди таба аласыз.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <section class="location-band" aria-label="Жайгашкан жер">
         <div class="location-inner">
           <div>
             <p class="section-kicker" data-i18n="locationKicker">Жайгашкан жер</p>
-            <h2 data-i18n="locationTitle">Тумар кафеси, Ош</h2>
+            <h2 data-i18n="locationTitle">Тумар кафеси, Ош шаары</h2>
           </div>
           <a
             class="button button-dark"
-            href="https://www.google.com/maps/search/?api=1&query=%D0%A2%D1%83%D0%BC%D0%B0%D1%80%20%D0%BA%D0%B0%D1%84%D0%B5%D1%81%D0%B8%20%D0%9E%D1%88"
+            href="https://www.google.com/maps/search/?api=1&query=Тумар%20кафеси%20Ош%20шаары"
             target="_blank"
             rel="noreferrer"
           >
