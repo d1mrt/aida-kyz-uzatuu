@@ -41,6 +41,8 @@ textarea {
 }
 
 .page-shell {
+  position: relative;
+  overflow: hidden;
   min-height: 100vh;
   padding: 46px 20px;
   display: flex;
@@ -49,11 +51,37 @@ textarea {
 }
 
 .invitation {
+  position: relative;
+  z-index: 1;
   width: min(100%, 430px);
   display: grid;
   grid-template-columns: 1fr;
   gap: 22px;
   align-items: start;
+}
+
+.petal-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.petal-layer span {
+  position: absolute;
+  top: -12vh;
+  left: var(--x);
+  width: var(--size);
+  height: calc(var(--size) * 1.45);
+  border-radius: 78% 22% 70% 30%;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(243, 202, 207, 0.58)),
+    linear-gradient(90deg, transparent 48%, rgba(193, 143, 147, 0.18) 50%, transparent 52%);
+  opacity: 0;
+  transform: translate3d(0, -12vh, 0) rotate(var(--rotate));
+  animation: petalFall var(--duration) linear infinite;
+  animation-delay: var(--delay);
 }
 
 .panel {
@@ -154,6 +182,50 @@ textarea {
   text-align: center;
 }
 
+.text-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  filter: blur(3px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.2, 0.78, 0.2, 1),
+    filter 0.9s ease;
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform, filter;
+}
+
+.text-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.intro h1.text-reveal {
+  transform: translateY(18px) scale(0.96);
+}
+
+.intro h1.text-reveal.is-visible {
+  transform: translateY(0) scale(1);
+}
+
+.text-reveal.language-refresh {
+  animation: textRefresh 0.55s ease both;
+}
+
+@keyframes textRefresh {
+  0% {
+    opacity: 0.55;
+    transform: translateY(8px);
+    filter: blur(2px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
 .intro h1,
 .venue-block h2,
 .date-block h2,
@@ -166,12 +238,37 @@ textarea {
 }
 
 .intro h1 {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  overflow: hidden;
   color: var(--gold);
   font-family: var(--script-font);
   font-size: 98px;
   font-weight: 400;
   line-height: 1.02;
   text-shadow: 0 2px 12px rgba(193, 143, 147, 0.13);
+}
+
+.intro h1::after {
+  content: "";
+  position: absolute;
+  inset: 0 -35%;
+  background: linear-gradient(105deg, transparent 34%, rgba(255, 255, 255, 0.72) 50%, transparent 66%);
+  transform: translateX(-130%) skewX(-12deg);
+  animation: titleSheen 4.2s ease-in-out infinite 1.3s;
+  pointer-events: none;
+}
+
+.title-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(24px) rotate(-4deg) scale(0.92);
+  transform-origin: 50% 80%;
+  animation:
+    letterBloom 0.88s cubic-bezier(0.2, 0.86, 0.22, 1.18) forwards,
+    letterFloat 4.4s ease-in-out infinite;
+  animation-delay: var(--letter-delay), calc(1.15s + var(--letter-delay));
 }
 
 .intro p,
@@ -209,11 +306,13 @@ textarea {
   margin: 52px auto;
   background: url("assets/ornament.svg") center / contain no-repeat;
   opacity: 0.3;
+  animation: ornamentBreath 7s ease-in-out infinite;
 }
 
 .ornament-middle {
   margin-top: 62px;
   margin-bottom: 48px;
+  animation-delay: 1.5s;
 }
 
 .message-block h2,
@@ -352,6 +451,7 @@ textarea {
   text-transform: none;
   overflow-wrap: anywhere;
   box-shadow: 0 8px 18px rgba(115, 75, 70, 0.07);
+  animation: softPulse 4.6s ease-in-out infinite;
 }
 
 .countdown-block {
@@ -512,6 +612,7 @@ input[type="radio"] {
   text-transform: none;
   cursor: pointer;
   box-shadow: 0 8px 16px rgba(145, 85, 85, 0.08);
+  animation: buttonGlow 4s ease-in-out infinite;
 }
 
 .submit-button:hover {
@@ -609,5 +710,125 @@ input[type="radio"] {
   .time-part + .time-part::before {
     left: -8px;
     top: 12px;
+  }
+}
+
+@keyframes petalFall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -12vh, 0) rotate(var(--rotate));
+  }
+
+  12% {
+    opacity: 0.42;
+  }
+
+  48% {
+    transform: translate3d(var(--drift), 52vh, 0) rotate(var(--rotate-mid));
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--drift-end), 112vh, 0) rotate(var(--rotate-end));
+  }
+}
+
+@keyframes letterBloom {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) rotate(-4deg) scale(0.92);
+    filter: blur(4px);
+  }
+
+  62% {
+    opacity: 1;
+    transform: translateY(-4px) rotate(1deg) scale(1.03);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes letterFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-3px) rotate(0.4deg) scale(1.01);
+  }
+}
+
+@keyframes titleSheen {
+  0%,
+  42% {
+    transform: translateX(-130%) skewX(-12deg);
+  }
+
+  64%,
+  100% {
+    transform: translateX(130%) skewX(-12deg);
+  }
+}
+
+@keyframes ornamentBreath {
+  0%,
+  100% {
+    opacity: 0.26;
+    transform: scale(0.96) rotate(0deg);
+  }
+
+  50% {
+    opacity: 0.38;
+    transform: scale(1.04) rotate(2deg);
+  }
+}
+
+@keyframes softPulse {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 8px 18px rgba(115, 75, 70, 0.07);
+  }
+
+  50% {
+    transform: translateY(-4px) scale(1.025);
+    box-shadow: 0 14px 26px rgba(145, 85, 85, 0.12);
+  }
+}
+
+@keyframes buttonGlow {
+  0%,
+  100% {
+    box-shadow: 0 8px 16px rgba(145, 85, 85, 0.08);
+  }
+
+  50% {
+    box-shadow: 0 12px 24px rgba(193, 143, 147, 0.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal-layer {
+    display: none;
+  }
+
+  .text-reveal,
+  .text-reveal.language-refresh,
+  .title-letter,
+  .intro h1::after,
+  .ornament,
+  .map-button,
+  .submit-button {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    animation: none;
+    transition: none;
   }
 }

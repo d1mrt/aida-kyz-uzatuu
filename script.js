@@ -29,6 +29,54 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
+function setupSignatureTitle() {
+  const title = document.querySelector(".intro h1");
+  if (!title) {
+    return;
+  }
+
+  const titleText = title.textContent.trim();
+  title.setAttribute("aria-label", titleText);
+  title.innerHTML = Array.from(titleText)
+    .map((letter, index) => {
+      const safeLetter = letter === " " ? "&nbsp;" : letter;
+      return `<span class="title-letter" style="--letter-delay: ${index * 0.09}s">${safeLetter}</span>`;
+    })
+    .join("");
+}
+
+function setupPetals() {
+  const shell = document.querySelector(".page-shell");
+  if (!shell || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  const layer = document.createElement("div");
+  layer.className = "petal-layer";
+  layer.setAttribute("aria-hidden", "true");
+
+  const petalCount = 22;
+  for (let index = 0; index < petalCount; index += 1) {
+    const petal = document.createElement("span");
+    const drift = index % 2 === 0 ? 24 + index * 3 : -22 - index * 2;
+    const rotate = -40 + index * 19;
+
+    petal.style.setProperty("--x", `${(index * 37) % 100}%`);
+    petal.style.setProperty("--size", `${9 + (index % 5) * 2}px`);
+    petal.style.setProperty("--delay", `${index * -0.74}s`);
+    petal.style.setProperty("--duration", `${13 + (index % 7) * 1.1}s`);
+    petal.style.setProperty("--drift", `${drift}px`);
+    petal.style.setProperty("--drift-end", `${drift * -0.55}px`);
+    petal.style.setProperty("--rotate", `${rotate}deg`);
+    petal.style.setProperty("--rotate-mid", `${rotate + 130}deg`);
+    petal.style.setProperty("--rotate-end", `${rotate + 270}deg`);
+
+    layer.appendChild(petal);
+  }
+
+  shell.prepend(layer);
+}
+
 let currentLanguage = "ky";
 
 const translations = {
@@ -232,6 +280,81 @@ function setHtml(selector, value) {
   }
 }
 
+const textAnimationSelectors = [
+  ".intro h1",
+  ".intro p",
+  ".intro time",
+  ".message-block h2",
+  ".message-block p",
+  ".date-block h2",
+  ".date-block p",
+  ".calendar",
+  ".venue-block h2",
+  ".venue-block h3",
+  ".venue-block p",
+  ".map-button",
+  ".countdown-block h2",
+  ".countdown",
+  ".rsvp-block h2",
+  ".rsvp-block > p",
+  "form label",
+  "fieldset legend",
+  "fieldset label",
+  "input",
+  "select",
+  "textarea",
+  ".submit-button",
+  ".closing-block p",
+];
+
+function getAnimatedTextElements() {
+  return Array.from(
+    new Set(
+      textAnimationSelectors.flatMap((selector) =>
+        Array.from(document.querySelectorAll(selector))
+      )
+    )
+  );
+}
+
+function setupTextAnimations() {
+  const elements = getAnimatedTextElements();
+
+  elements.forEach((element, index) => {
+    element.classList.add("text-reveal");
+    element.style.setProperty("--reveal-delay", `${Math.min(index * 0.045, 0.65)}s`);
+  });
+
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach((element) => element.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.16, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  elements.forEach((element) => observer.observe(element));
+}
+
+function refreshTextAnimations() {
+  getAnimatedTextElements().forEach((element, index) => {
+    window.setTimeout(() => {
+      element.classList.remove("language-refresh");
+      void element.offsetWidth;
+      element.classList.add("language-refresh");
+    }, index * 18);
+  });
+}
+
 function applyLanguage(language) {
   currentLanguage = language;
   const text = translations[language];
@@ -278,11 +401,17 @@ function applyLanguage(language) {
   document.querySelectorAll(".language-switch button").forEach((item) => {
     item.classList.toggle("active", item.dataset.lang === language);
   });
+
+  refreshTextAnimations();
 }
 
 const form = document.getElementById("rsvpForm");
 const formStatus = document.getElementById("formStatus");
 const whatsAppPhone = "996709065082";
+
+setupSignatureTitle();
+setupPetals();
+setupTextAnimations();
 
 document.querySelectorAll(".language-switch button").forEach((button) => {
   button.addEventListener("click", () => {
