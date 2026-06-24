@@ -1,345 +1,172 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ky">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Кыз узатуу мааракеси үчүн кооз чакыруу сайты: жооп берүү, сүрөт маанайы жана конок маалыматтары."
-    />
-    <title>Кыз узатуу | Мааракеге чакыруу</title>
+    <title>Аида - кыз узатуу</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main" data-i18n="skipLink">Мазмунга өтүү</a>
-
-    <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="Кыз узатуу башкы бет">
-        <span class="brand-mark" aria-hidden="true">КУ</span>
-        <span class="brand-copy">
-          <strong data-i18n="brandTitle">Кыз узатуу</strong>
-          <small data-i18n="brandSubtitle">Аиданын маарекеси</small>
-        </span>
-      </a>
-
-      <nav class="site-nav" id="siteNav" aria-label="Негизги навигация">
-        <a href="#details" data-i18n="navDetails">Маалымат</a>
-        <a href="#moments" data-i18n="navMoments">Көз ирмемдер</a>
-        <a href="#rsvp" data-i18n="navRsvp">Жооп берүү</a>
-      </nav>
-
-      <div class="header-actions">
-        <div class="language-switcher" data-language-switcher aria-label="Тил тандоо">
-          <button class="language-option is-active" type="button" data-lang="ky" aria-pressed="true">KG</button>
-          <button class="language-option" type="button" data-lang="ru" aria-pressed="false">RU</button>
-          <button class="language-option" type="button" data-lang="en" aria-pressed="false">EN</button>
-          <button class="language-option" type="button" data-lang="tr" aria-pressed="false">TR</button>
-        </div>
-        <button class="icon-button" type="button" data-share aria-label="Чакыруунун шилтемесин көчүрүү" title="Чакыруунун шилтемесин көчүрүү">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M10 13a5 5 0 0 0 7.07 0l2.12-2.12a5 5 0 0 0-7.07-7.07l-1.22 1.22" />
-            <path d="M14 11a5 5 0 0 0-7.07 0L4.81 13.12a5 5 0 0 0 7.07 7.07l1.22-1.22" />
-          </svg>
-        </button>
-        <button
-          class="menu-button"
-          type="button"
-          data-menu
-          aria-controls="siteNav"
-          aria-expanded="false"
-          aria-label="Менюну ачуу"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </header>
-
-    <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="hero-image" aria-hidden="true"></div>
-        <div class="hero-shade" aria-hidden="true"></div>
-
-        <div class="hero-content">
-          <p class="eyebrow" data-i18n="heroEyebrow">2026-жылдын 22-июлу - Ош шаары</p>
-          <h1 id="hero-title" data-i18n="heroTitle">Аида</h1>
-          <p class="hero-subtitle" data-i18n="heroSubtitle">Кыз Узатуу</p>
-          <p class="hero-lead" data-i18n="heroLead">
-            Бул күн биз үчүн өзгөчө маанилүү. Биз бул кубанычтуу көз ирмемди эң жакын, сүйүктүү адамдардын жана досторубуздун курчоосунда өткөргүбүз келет.
-
-            Сиздерди кызыбыз Аиданын кыз узатуу тоюна чакырганыбызга абдан кубанычтабыз!
-          </p>
-
-          <div class="hero-actions" aria-label="Негизги аракеттер">
-            <a class="button button-primary" href="#rsvp" data-i18n="heroPrimary">Орунду ырастоо</a>
-            <button class="button button-secondary" type="button" data-calendar data-i18n="heroCalendar">Календарга кошуу</button>
+    <main class="page-shell">
+      <section class="invitation" aria-label="Аиданын кыз узатуу чакыруусу">
+        <article class="panel panel-left">
+          <div class="hero-photo" aria-hidden="true">
           </div>
 
-          <dl class="event-strip" aria-label="Маараке тууралуу кыскача маалымат">
-            <div>
-              <dt data-i18n="stripDateLabel">Күнү</dt>
-              <dd data-i18n="stripDate">22-июль, 2026</dd>
-            </div>
-            <div>
-              <dt data-i18n="stripTimeLabel">Убактысы</dt>
-              <dd>18:00</dd>
-            </div>
-            <div>
-              <dt data-i18n="stripVenueLabel">Өтчү жер</dt>
-              <dd data-i18n="venueName">Тумар кафеси</dd>
-            </div>
-          </dl>
-        </div>
-      </section>
-
-      <section class="section details-band" id="details">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="section-kicker" data-i18n="detailsKicker">Конок маалыматтары</p>
-            <h2 data-i18n="detailsTitle">Мааракеге чейин билип алуу керек болгон нерселер.</h2>
+          <div class="language-switch" aria-label="Тил тандоо">
+            <button type="button" class="active" data-lang="ky">КЫР</button>
+            <button type="button" data-lang="ru">РУС</button>
+            <button type="button" data-lang="tr">TUR</button>
+            <button type="button" data-lang="en">ENG</button>
           </div>
 
-          <div class="detail-grid">
-            <article class="detail-card">
-              <span class="detail-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M8 2v4" />
-                  <path d="M16 2v4" />
-                  <path d="M3 10h18" />
-                  <path d="M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" />
-                </svg>
-              </span>
-              <h3 data-i18n="dateCardTitle">Күнү жана убактысы</h3>
-              <p data-i18n="dateCardText">Шаршемби, 2026-жылдын 22-июлу. Конок тосуу саат 18:00дө башталат.</p>
-            </article>
+          <header class="intro">
+            <h1>Аида</h1>
+            <p>Кыз узатуу</p>
+            <time datetime="2026-07-22">22.07.2026</time>
+          </header>
 
-            <article class="detail-card">
-              <span class="detail-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 21s7-4.76 7-11a7 7 0 1 0-14 0c0 6.24 7 11 7 11Z" />
-                  <circle cx="12" cy="10" r="2.4" />
-                </svg>
-              </span>
-              <h3 data-i18n="venueCardTitle">Өтчү жер</h3>
-              <p data-i18n="venueCardText">Тумар кафеси, Ош шаары. Кире бериште үй-бүлөлүк тосуп алуу уюштурулат.</p>
-            </article>
+          <div class="ornament ornament-top" aria-hidden="true"></div>
 
-            <article class="detail-card">
-              <span class="detail-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7" />
-                  <path d="M2 7h20v5H2z" />
-                  <path d="M12 21V7" />
-                  <path d="M12 7H7.5a2.5 2.5 0 1 1 2.17-3.75C10.43 4.57 12 7 12 7Z" />
-                  <path d="M12 7h4.5a2.5 2.5 0 1 0-2.17-3.75C13.57 4.57 12 7 12 7Z" />
-                </svg>
-              </span>
-              <h3 data-i18n="dressCardTitle">Кийим үлгүсү</h3>
-              <p data-i18n="dressCardText">Кечки жарашыктуу стиль. Пил сөөгү, зымырыт, роза, алтын жана терең нейтралдуу түстөр ылайыктуу.</p>
-            </article>
-          </div>
-
-          <div class="countdown" aria-label="Countdown to event">
-            <div>
-              <span data-count="days">00</span>
-              <small data-i18n="countDays">Күн</small>
-            </div>
-            <div>
-              <span data-count="hours">00</span>
-              <small data-i18n="countHours">Саат</small>
-            </div>
-            <div>
-              <span data-count="minutes">00</span>
-              <small data-i18n="countMinutes">Мүнөт</small>
-            </div>
-            <div>
-              <span data-count="seconds">00</span>
-              <small data-i18n="countSeconds">Секунд</small>
-            </div>
-          </div>
-
-          <div class="mini-calendar" aria-label="Мааракенин күнү">
-            <div>
-              <p data-i18n="calendarPanelKicker">Той салтанаты</p>
-              <strong data-i18n="calendarPanelDate">22-июль, саат 18:00</strong>
-            </div>
-            <div class="month-grid" aria-hidden="true">
-              <span>1</span>
-              <span>2</span>
-              <span>3</span>
-              <span>4</span>
-              <span>5</span>
-              <span>6</span>
-              <span>7</span>
-              <span>8</span>
-              <span>9</span>
-              <span>10</span>
-              <span>11</span>
-              <span>12</span>
-              <span>13</span>
-              <span>14</span>
-              <span>15</span>
-              <span>16</span>
-              <span>17</span>
-              <span>18</span>
-              <span>19</span>
-              <span>20</span>
-              <span>21</span>
-              <span class="is-event-day">22</span>
-              <span>23</span>
-              <span>24</span>
-              <span>25</span>
-              <span>26</span>
-              <span>27</span>
-              <span>28</span>
-              <span>29</span>
-              <span>30</span>
-              <span>31</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section moments-band" id="moments">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="section-kicker" data-i18n="momentsKicker">Көз ирмемдер</p>
-            <h2 data-i18n="momentsTitle">Кеченин назик визуалдык маанайы.</h2>
-          </div>
-
-          <div class="gallery-grid">
-            <button
-              class="gallery-item item-wide"
-              type="button"
-              data-lightbox
-              data-title-key="galleryTitle1"
-              data-title="Салтанаттуу жасалга"
-              data-image="assets/bg-floral.png"
-              data-position="center"
-            >
-              <span data-i18n="galleryTitle1">Салтанаттуу жасалга</span>
-            </button>
-            <button
-              class="gallery-item"
-              type="button"
-              data-lightbox
-              data-title-key="galleryTitle2"
-              data-title="Зымырыт жана алтын деталдар"
-              data-image="assets/bg-details.png"
-              data-position="right center"
-            >
-              <span data-i18n="galleryTitle2">Зымырыт жана алтын деталдар</span>
-            </button>
-            <button
-              class="gallery-item"
-              type="button"
-              data-lightbox
-              data-title-key="galleryTitle3"
-              data-title="Үй-бүлөлүк дасторкон"
-              data-image="assets/bg-table.png"
-              data-position="left bottom"
-            >
-              <span data-i18n="galleryTitle3">Үй-бүлөлүк дасторкон</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section class="section rsvp-band" id="rsvp">
-        <div class="section-inner rsvp-grid">
-          <div class="rsvp-copy">
-            <p class="section-kicker" data-i18n="rsvpKicker">Жооп берүү</p>
-            <h2 data-i18n="rsvpTitle">Үй-бүлөлүк дасторкондон ордуңузду ырастап коюңуз.</h2>
-            <p data-i18n="rsvpText">
-              Форманы толтуруңуз, андан кийин жообуңуз WhatsApp аркылуу даяр билдирүү болуп ачылат.
+          <section class="message-block">
+            <h2>Урматтуу<br />коноктор!</h2>
+            <p>
+              Бул күн биз үчүн өзгөчө маанилүү. Биз бул кубанычтуу көз ирмемди
+              эң жакын, сүйүктүү адамдардын жана досторубуздун курчоосунда
+              өткөргүбүз келет.
             </p>
-          </div>
+          </section>
 
-          <form class="rsvp-form" data-rsvp-form>
-            <label>
-              <span data-i18n="formNameLabel">Толук аты-жөнү</span>
-              <input type="text" name="name" autocomplete="name" required placeholder="Атыңыз" data-i18n-placeholder="formNamePlaceholder" />
-            </label>
+          <div class="ornament ornament-middle" aria-hidden="true"></div>
 
-            <label>
-              <span data-i18n="formGuestCountLabel">Конок саны</span>
-              <select name="guestCount" required>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select>
-            </label>
-
-            <div class="form-field">
-              <span data-i18n="formAttendanceLabel">Келүү мүмкүнчүлүгү</span>
-              <span class="radio-list">
-                <label>
-                  <input type="radio" name="attendance" value="yes" required />
-                  <span data-i18n="attendanceYes">Келем</span>
-                </label>
-                <label>
-                  <input type="radio" name="attendance" value="no" />
-                  <span data-i18n="attendanceNo">Келе албайм</span>
-                </label>
-              </span>
+          <section class="date-block">
+            <h2>Той<br />салтанаты</h2>
+            <p>22 июль 2026 жыл</p>
+            <p>саат 18:00</p>
+            <div class="calendar" aria-label="Август айынын календары">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+              <div>21</div>
+              <div class="event-day">22</div>
+              <div>23</div>
+              <div>24</div>
+              <div>25</div>
+              <div>26</div>
+              <div>27</div>
+              <div>28</div>
+              <div>29</div>
+              <div>30</div>
+              <div>31</div>
             </div>
+          </section>
+        </article>
 
-            <label>
-              <span data-i18n="formMessageLabel">Каалоо-тилек</span>
-              <textarea name="message" rows="4" placeholder="Кыска каалоо-тилек же билдирүү" data-i18n-placeholder="formMessagePlaceholder"></textarea>
-            </label>
+        <article class="panel panel-right">
+          <section class="venue-block">
+            <h2>Мекен-жайыбыз:</h2>
+            <h3>«Тумар»</h3>
+            <p>тойканасы, Ош шаары</p>
+            <a
+              class="map-button"
+              href="https://maps.google.com/?q=%D0%A2%D1%83%D0%BC%D0%B0%D1%80%20%D1%82%D0%BE%D0%B9%D0%BA%D0%B0%D0%BD%D0%B0%D1%81%D1%8B%20%D0%9E%D1%88"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Картадан<br />кароо
+            </a>
+          </section>
 
-            <button class="button button-primary" type="submit" data-i18n="formSubmit">WhatsApp аркылуу жөнөтүү</button>
-            <p class="form-status" data-form-status role="status"></p>
-          </form>
-        </div>
-      </section>
+          <section class="countdown-block">
+            <h2>Тойго чейин:</h2>
+            <div class="countdown" aria-live="polite">
+              <div class="time-part">
+                <strong id="days">00</strong>
+                <span>күн</span>
+              </div>
+              <div class="time-part">
+                <strong id="hours">00</strong>
+                <span>саат</span>
+              </div>
+              <div class="time-part">
+                <strong id="minutes">00</strong>
+                <span>мүнөт</span>
+              </div>
+              <div class="time-part">
+                <strong id="seconds">00</strong>
+                <span>секунд</span>
+              </div>
+            </div>
+          </section>
 
-      <section class="location-band" aria-label="Жайгашкан жер">
-        <div class="location-inner">
-          <div>
-            <p class="section-kicker" data-i18n="locationKicker">Жайгашкан жер</p>
-            <h2 data-i18n="locationTitle">Тумар кафеси, Ош шаары</h2>
-          </div>
-          <a
-            class="button button-dark"
-            href="https://www.google.com/maps/search/?api=1&query=Тумар%20кафеси%20Ош%20шаары"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span data-i18n="locationButton">Багыт алуу</span>
-          </a>
-        </div>
+          <section class="rsvp-block">
+            <h2>Катышуу</h2>
+            <p>Катышууңузду WhatsApp аркылуу ырастап коюуну өтүнөбүз</p>
+
+            <form id="rsvpForm">
+              <label for="guestName">Аты-жөнүңүздү жазыңыз</label>
+              <input id="guestName" name="guestName" type="text" placeholder="Мисалы: Айбек-Айдана" required />
+
+              <label for="guestCount">Конок саны</label>
+              <select id="guestCount" name="guestCount" required>
+                <option value="1" selected>1 конок</option>
+                <option value="2">2 конок</option>
+                <option value="3">3 конок</option>
+                <option value="4">4 конок</option>
+                <option value="5+">5 же андан көп</option>
+              </select>
+
+              <fieldset>
+                <legend>Катышууңуз</legend>
+                <label>
+                  <input type="radio" name="attendance" value="Албетте, келем!" required />
+                  <span>Албетте, келем!</span>
+                </label>
+                <label>
+                  <input type="radio" name="attendance" value="Тилекке каршы, келе албайм!" />
+                  <span>Тилекке каршы, келе албайм!</span>
+                </label>
+              </fieldset>
+
+              <label for="wishText">Каалоо-тилек, билдирүү</label>
+              <textarea
+                id="wishText"
+                name="wishText"
+                placeholder="Каалоо-тилегиңизди же билдирүүңүздү жазыңыз"
+              ></textarea>
+
+              <button class="submit-button" type="submit">WhatsApp аркылуу жөнөтүү</button>
+              <p class="form-status" id="formStatus" role="status"></p>
+            </form>
+          </section>
+
+          <footer class="closing-block">
+            <p>
+              Терең урматтоо менен,<br />
+              Аиданын үй-бүлөсү<br /><br />
+              Биз сизди майрамыбызда көрүүгө абдан кубанычтабыз!
+            </p>
+          </footer>
+        </article>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <p data-i18n="footerText">Кыз узатуу - Аиданын үй-бүлөсүнөн сүйүү менен</p>
-      <button class="footer-link" type="button" data-scroll-top data-i18n="backTop">Жогору кайтуу</button>
-    </footer>
-
-    <div class="toast" data-toast role="status" aria-live="polite"></div>
-
-    <div class="lightbox" data-lightbox-modal aria-hidden="true">
-      <button class="lightbox-close" type="button" data-lightbox-close aria-label="Сүрөттү жабуу">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M18 6 6 18" />
-          <path d="m6 6 12 12" />
-        </svg>
-      </button>
-      <figure>
-        <img src="assets/bg-floral.png" alt="" data-lightbox-image />
-        <figcaption data-lightbox-title></figcaption>
-      </figure>
-    </div>
 
     <script src="script.js"></script>
   </body>
