@@ -333,10 +333,10 @@ textarea {
 }
 
 .map-button {
-  width: 112px;
-  height: 112px;
+  width: 140px;
+  height: 140px;
   margin: 36px auto 0;
-  padding: 0 14px;
+  padding: 0 18px;
   border-radius: 50%;
   border: 1px solid rgba(212, 166, 170, 0.3);
   background: rgba(255, 255, 255, 0.78);
@@ -346,8 +346,8 @@ textarea {
   justify-content: center;
   text-decoration: none;
   text-align: center;
-  font-size: 16px;
-  line-height: 1.14;
+  font-size: 20px;
+  line-height: 1.12;
   letter-spacing: 0;
   text-transform: none;
   overflow-wrap: anywhere;
