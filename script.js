@@ -29,13 +29,13 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-function setupSignatureTitle() {
+function setupSignatureTitle(titleTextOverride) {
   const title = document.querySelector(".intro h1");
   if (!title) {
     return;
   }
 
-  const titleText = title.textContent.trim();
+  const titleText = (titleTextOverride || title.textContent).trim();
   title.setAttribute("aria-label", titleText);
   title.innerHTML = Array.from(titleText)
     .map((letter, index) => {
@@ -82,6 +82,7 @@ let currentLanguage = "ky";
 const translations = {
   ky: {
     documentTitle: "Аида - кыз узатуу",
+    introName: "Аида",
     pageLabel: "Аиданын кыз узатуу чакыруусу",
     languageLabel: "Тил тандоо",
     introSubtitle: "Кыз узатуу",
@@ -128,6 +129,7 @@ const translations = {
   },
   ru: {
     documentTitle: "Аида - проводы невесты",
+    introName: "Аида",
     pageLabel: "Приглашение на проводы невесты Аиды",
     languageLabel: "Выбор языка",
     introSubtitle: "Проводы невесты",
@@ -174,6 +176,7 @@ const translations = {
   },
   tr: {
     documentTitle: "Aida - gelin uğurlama",
+    introName: "Aida",
     pageLabel: "Aida'nın gelin uğurlama davetiyesi",
     languageLabel: "Dil seçimi",
     introSubtitle: "Gelin uğurlama",
@@ -220,6 +223,7 @@ const translations = {
   },
   en: {
     documentTitle: "Aida - bride send-off",
+    introName: "Aida",
     pageLabel: "Invitation to Aida's bride send-off",
     languageLabel: "Language selection",
     introSubtitle: "Bride send-off",
@@ -364,6 +368,7 @@ function applyLanguage(language) {
   document.querySelector(".invitation").setAttribute("aria-label", text.pageLabel);
   document.querySelector(".language-switch").setAttribute("aria-label", text.languageLabel);
 
+  setupSignatureTitle(text.introName);
   setText(".intro p", text.introSubtitle);
   setHtml(".message-block h2", text.messageTitle);
   setText(".message-block p:nth-of-type(1)", text.messageFirst);
